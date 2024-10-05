@@ -1,29 +1,35 @@
 'use client';
 
+import { AGE_GROUP_HEADING_LABEL } from '@/constant/createStory';
 import { ageGroupOptions } from '@/constant/option';
-import { optionTypes } from '@/types/types';
+import { FieldData, OptionTypes } from '@/types/types';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function AgeGroup({ userSelection }: any) {
+function AgeGroup({
+  userSelection,
+}: {
+  userSelection: (data: FieldData) => void;
+}) {
   const [selectedOption, setSelectedOption] = useState<string>();
 
-  const handleAgeGroupSelection = (item: optionTypes) => {
+  const handleAgeGroupSelection = (item: OptionTypes) => {
     setSelectedOption(item.label);
     userSelection({
       fieldValue: item.label,
-      fieldName: 'storyType',
+      fieldName: 'ageGroup',
     });
   };
 
   return (
     <div>
       <label className="text-primary text-3xl font-bold">
-        1.Subject of the Story
+        {AGE_GROUP_HEADING_LABEL}
       </label>
       <div className="grid grid-cols-3 gap-4 mt-3">
         {ageGroupOptions.map((item, index) => (
           <div
+            key={index}
             className={`relative p-1 ${
               selectedOption === item.label
                 ? 'grayscale-0 border-2 rounded-3xl border-primary'

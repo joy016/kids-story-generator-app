@@ -1,28 +1,31 @@
 'use client';
 
 import { imageStyleOptions } from '@/constant/option';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import { optionTypes } from '@/types/types';
+import { FieldData, OptionTypes } from '@/types/types';
 
-function ImageStyle({ userSelection }: any) {
+function ImageStyle({
+  userSelection,
+}: {
+  userSelection: (data: FieldData) => void;
+}) {
   const [selectedOption, setSelectedOption] = useState<string>();
 
-  const handleGroupTypeSelection = (item: optionTypes) => {
+  const handleGroupTypeSelection = (item: OptionTypes) => {
     setSelectedOption(item.label);
     userSelection({
       fieldValue: item.label,
-      fieldSet: 'ImageStyle',
+      fieldName: 'imageStyle',
     });
   };
   return (
     <div>
-      <label className="text-primary text-3xl font-bold">
-        1.Subject of the Story
-      </label>
+      <label className="text-primary text-3xl font-bold">1.Image Style</label>
       <div className="grid grid-cols-3 gap-4 mt-3">
         {imageStyleOptions.map((item, index) => (
           <div
+            key={index}
             className={`relative p-1 ${
               selectedOption === item.label
                 ? 'grayscale-0 border-2 rounded-3xl border-primary'

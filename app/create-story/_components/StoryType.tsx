@@ -1,14 +1,18 @@
 'use client';
 
 import { storyTypeOptions } from '@/constant/option';
-import { optionTypes } from '@/types/types';
+import { FieldData, OptionTypes } from '@/types/types';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function StoryType({ userSelection }: any) {
+function StoryType({
+  userSelection,
+}: {
+  userSelection: (data: FieldData) => void;
+}) {
   const [selectedOption, setSelectedOption] = useState<string>();
 
-  const handleStoryTypeSelection = (item: optionTypes) => {
+  const handleStoryTypeSelection = (item: OptionTypes) => {
     setSelectedOption(item.label);
     userSelection({
       fieldValue: item.label,
@@ -21,6 +25,7 @@ function StoryType({ userSelection }: any) {
       <div className="grid grid-cols-3 gap-4 mt-3">
         {storyTypeOptions.map((item, index) => (
           <div
+            key={index}
             className={`relative p-1 ${
               selectedOption === item.label
                 ? 'grayscale-0 border-2 rounded-3xl border-primary'

@@ -1,9 +1,13 @@
 'use client';
 
+import { FieldData } from '@/types/types';
 import { Textarea } from '@nextui-org/react';
-import React from 'react';
 
-function StorySubject({ userSelection }: any) {
+function StorySubject({
+  userSelection,
+}: {
+  userSelection: (data: FieldData) => void;
+}) {
   return (
     <div>
       <label className="text-primary text-3xl font-bold">
@@ -19,7 +23,7 @@ function StorySubject({ userSelection }: any) {
         onChange={(e) =>
           userSelection({
             fieldValue: e.target.value,
-            fieldName: 'subjectStory',
+            fieldName: 'storySubject',
           })
         }
       />

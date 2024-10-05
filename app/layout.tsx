@@ -1,15 +1,7 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import './globals.css';
 import Provider from './provider';
 import { Nunito } from 'next/font/google';
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from '@clerk/nextjs';
 
 const myFont = Nunito({
   subsets: ['latin'],

@@ -13,13 +13,10 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@nextui-org/button';
-import { currentUser } from '@clerk/nextjs/server';
-import { useRouter } from 'next/navigation';
 import { UserButton, useUser } from '@clerk/nextjs';
 
 function Header() {
-  const router = useRouter();
-  const { user, isSignedIn } = useUser();
+  const { isSignedIn } = useUser();
 
   const [isOpen, setIsOpen] = useState(false);
 

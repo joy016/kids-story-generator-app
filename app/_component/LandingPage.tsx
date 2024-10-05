@@ -1,9 +1,13 @@
 'use client';
 
+import {
+  CREATE_STORY_BTN_LABEL,
+  DESCRIPTION_LABEL,
+  HEADING_LABEL,
+} from '@/constant/home';
 import { Button } from '@nextui-org/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import React from 'react';
 
 function LandingPage() {
@@ -12,16 +16,14 @@ function LandingPage() {
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <h2 className="text-[4.3rem] font-extrabold text-primary py-10">
-            Craft Magical Stories for Kids in Minutes
+            {HEADING_LABEL}
           </h2>
           <p className="text-2xl text-primary font-light">
-            Create fun and personalised stories that bring your child's
-            adventures to life and spark their passion for reading. It only
-            takes a few seconds!
+            {DESCRIPTION_LABEL}
           </p>
           <Link href="/create-story">
             <Button color="primary" className="font-bold text-2xl p-8 mt-5">
-              Create Story
+              {CREATE_STORY_BTN_LABEL}
             </Button>
           </Link>
         </div>
