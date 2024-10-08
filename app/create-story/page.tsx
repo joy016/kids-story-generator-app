@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { storyData } from '@/config/schema';
 import Loader from '../_component/Loader';
 import {
+  CREATE_STORY_LOADING_MESSAGE,
   GENERATE_STORY_BTN_LABEL,
   HOME_HEADING_LABEL,
   STORY_LABEL_DESCRIPTION,
@@ -103,7 +104,7 @@ function CreateStory() {
           {GENERATE_STORY_BTN_LABEL}
         </Button>
       </div>
-      <Loader loading={loading} />
+      <Loader loading={loading} loadingMessage={CREATE_STORY_LOADING_MESSAGE} />
     </div>
   );
 }

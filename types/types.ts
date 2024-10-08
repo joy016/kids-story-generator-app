@@ -48,3 +48,13 @@ export interface CoverImage {
   description: string;
   style: string;
 }
+
+export interface ExploreStories {
+  output: StoryOutput;
+  storyId: string;
+}
+
+export interface StoryCard {
+  output: StoryOutput;
+  storyId: string;
+}

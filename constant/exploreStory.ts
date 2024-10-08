@@ -1,0 +1,9 @@
+const EXPLORE_STORY_HEADER = 'Explore More Stories';
+const READ_NOW_BUTTON = 'Read Now';
+const EXPLORE_STORIES_LOADING_MESSAGE = 'Stories Fetching...';
+
+export {
+  EXPLORE_STORY_HEADER,
+  READ_NOW_BUTTON,
+  EXPLORE_STORIES_LOADING_MESSAGE,
+};

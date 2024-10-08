@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -31,7 +31,7 @@ function Header() {
     },
     {
       menu: 'Explore Stories',
-      link: '/explore',
+      link: '/explore-story',
     },
     {
       menu: 'Contact Us',
@@ -68,6 +68,7 @@ function Header() {
           {isSignedIn ? 'Dashboard' : 'Get started'}
         </Button>
       </NavbarContent>
+
       <NavbarMenu>
         {menuItem.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
@@ -80,7 +81,7 @@ function Header() {
                   : 'foreground'
               }
               href={item.link}
-              className='w-full ize="lg"'
+              className='w-full size="lg"'
             >
               {item.menu}
             </Link>

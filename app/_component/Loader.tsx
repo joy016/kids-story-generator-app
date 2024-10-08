@@ -7,7 +7,13 @@ import {
 import Image from 'next/image';
 import { useEffect } from 'react';
 
-function Loader({ loading }: { loading: boolean }) {
+function Loader({
+  loading,
+  loadingMessage,
+}: {
+  loading: boolean;
+  loadingMessage: string;
+}) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   useEffect(() => {
@@ -30,6 +36,7 @@ function Loader({ loading }: { loading: boolean }) {
                     className="w-[200px] h-[200px]"
                   />
                   <h2 className="font-bold text-2xl">
+                    {loadingMessage}
                     kids story is generating.....
                   </h2>
                 </ModalBody>
