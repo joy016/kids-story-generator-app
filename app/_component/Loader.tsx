@@ -35,10 +35,7 @@ function Loader({
                     width={300}
                     className="w-[200px] h-[200px]"
                   />
-                  <h2 className="font-bold text-2xl">
-                    {loadingMessage}
-                    kids story is generating.....
-                  </h2>
+                  <h2 className="font-bold text-2xl">{loadingMessage}</h2>
                 </ModalBody>
               </>
             )}
